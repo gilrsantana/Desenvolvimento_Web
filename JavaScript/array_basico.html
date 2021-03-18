@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array básico</title>
+</head>
+<body>
+
+    <script>
+
+        ///////////////// Declarando array //////////////////////////
+
+        var lista = Array()
+
+        lista[0] = 'banana'
+        lista[1] = 'uva'
+        lista[2] = 'pera'
+        lista[3] = 'maçã'
+
+        console.log(lista)
+
+        var pessoa = ['João', 'Maria', 'José']
+
+        console.log(pessoa)
+
+        var colecao = []
+        console.log(colecao)
+
+        var grupo = [lista, pessoa, colecao]
+
+        console.log(grupo)
+
+
+        ///////////////// Incluindo elementos no array //////////////////////////
+
+        //Inclui elemento no final do array
+        pessoa.push('Andre')
+        console.log(grupo)
+
+        //Inclui elemento no início do array
+        grupo.unshift('Toyota')
+
+        console.log(grupo)
+
+
+
+        ///////////////// Excluindo elementos no array //////////////////////////
+        
+        //Excluir elemento no final do array
+        pessoa.pop()
+
+        console.log(grupo)
+
+        //Excluir elemento no início do array
+        grupo.shift()
+        console.log(grupo)
+
+
+
+        ///////////////// Buscando elementos no array //////////////////////////
+
+        //Buscando um elemento dentro de um array - função indexOf()
+        if(pessoa.indexOf('José') === -1){
+            console.log('Elemento não existe')
+        }else{
+            console.log('Elemento existe e está na posição ' + pessoa.indexOf('José'))
+        }
+
+        if(pessoa.indexOf('Carla') === -1){
+            console.log('Elemento não existe')
+        }else{
+            console.log('Elemento existe e está na posição ' + pessoa.indexOf('Carla'))
+        }
+
+
+
+
+
+        ///////////////// Ordenando elementos no array //////////////////////////
+
+        // Ordenando os elementos dentro de um array - função sort()
+
+        //Array sem ordenação alfabética
+        console.log(lista)
+
+        //Array com ordenação alfabética
+        console.log(lista.sort())
+
+
+
+        //A função sort() não ordena os números de forma correta, para isso é necessário utilizar uma função auxiliar
+        var lista_de_numeros = [15, 2, 37,9, 22]
+
+        //sem a função auxiliar
+        console.log(lista_de_numeros.sort())
+
+        //com a funçao auxiliar
+        console.log(lista_de_numeros.sort(ordenaNumeros))
+
+        //função auxiliar
+        function ordenaNumeros(a, b) {
+            return a - b
+            //se o retorno é < 0, então a é ordenado antes de b
+            //se o retorno é > 0, então b é ordenado antes de a
+            //se o retorno é = 0, então ordem ẃ mantida
+        }
+
+        //OBSERVAÇÃO:
+        /*A função sort() tem inteligência para resolver a ordem mesmo que os elementos do array sejam strings numéricos,
+         *assim, o tratamento é o mesmo sejam os valores string '17' ou número 17.
+         *Mas atenção: Isso só vale se todos os elementos do array forem números
+         */
+
+
+
+
+    </script>
+    
+    
+</body>
+</html>
