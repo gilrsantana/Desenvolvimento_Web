@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Funções Strings</title>
+</head>
+<body>
+
+  <script>
+
+    var nome = "Gilmar Santana";
+    document.write(nome.length);
+    document.write("<br>");
+    document.write(nome.charAt(5));
+    document.write("<br>");
+    document.write(nome.indexOf("l"));
+    document.write("<br>");
+    document.write(nome.indexOf("G"));
+    document.write("<br>");
+    //Diferencia maiusculo e minusculo
+    //Se não encontra o valor retorna -1
+    document.write(nome.indexOf("g"));
+    document.write("<br>");
+    document.write(nome.indexOf("c"));
+    document.write("<br>")
+    document.write(nome.replace("Gilmar", "Antonio"))
+    document.write("<br>")
+    document.write(nome.substr(0, 3))
+    document.write("<br>")
+    document.write(nome.toLocaleLowerCase())
+    document.write("<br>")
+    document.write(nome.toLocaleUpperCase())
+    document.write("<br>")
+    //Adicionando espaços na estremidade da string
+    nome = " Gilmar Santana "
+    document.write(nome)
+    document.write("<br>")
+    //Removendo os espaços com trim()
+
+    document.write("-" + nome.trim() + "-")
+
+  </script>
+  
+</body>   
+</html>
