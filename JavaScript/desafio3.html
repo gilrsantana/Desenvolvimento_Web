@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio3</title>
+</head>
+<body>
+
+    <input id="campo" type="text">
+    <button onclick="operaArray()" type="button">Adicionar</button>
+    <button onclick="ordenarArray()" type="button">Ordenar</button>
+    
+
+    <script> 
+
+        var objetos = Array('Cadeira', 'Impressora', 'Garfo')
+
+        function operaArray(){
+            var valor = document.getElementById('campo').value 
+        
+            if (valor === ''){
+                alert('Insira um valor válido')
+            } else if (objetos.indexOf(valor)  !== -1 ) {
+                alert('Objeto já foi adicionado')
+            } else {
+                objetos.push(valor)
+                console.log(objetos)
+                document.getElementById('campo').value = ''
+            }
+        }
+
+        function ordenarArray() {
+            objetos.sort()
+            console.log(objetos)
+        }
+
+        
+        
+
+
+    </script>
+
+
+</body>
+</html>
