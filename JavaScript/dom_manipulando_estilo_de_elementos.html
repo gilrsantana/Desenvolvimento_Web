@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manipulando estilo de elementos</title>
+
+  <style>
+    .box {
+      width: 250px;
+      height: 250px;
+      margin: 20px 0;
+      border: 1px solid #ccc;
+      transition: 0.5s;
+    }
+
+    
+  </style>
+
+</head>
+<body>
+
+  <h3>Manipulando estilo</h3>
+  <hr>
+
+  <button type="button" onclick="mudaCorElemento('#ff0000')">Vermelho</button>
+  <button type="button" onclick="mudaCorElemento('#00ff00')">Verde</button>
+  <button type="button" onclick="mudaCorElemento('#0000ff')">Azul</button>
+
+  <div class="box"></div>
+
+  <script>
+    function mudaCorElemento(corDeFundo){
+      
+      var box = document.querySelector(".box").style.background = corDeFundo;
+
+    }
+  </script>
+
+</body>
+
+</html>
