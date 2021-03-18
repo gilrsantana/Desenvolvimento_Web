@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos Mouse</title>
+</head>
+<body>
+    <!-- <div onclick="evento1()" style="background: gray; width: 300px; height: 300px;"></div> -->
+    <!-- <div ondblclick="evento1()" style="background: gray; width: 300px; height: 300px;"></div> -->
+    <!-- <div onmouseup="evento1()" style="background: gray; width: 300px; height: 300px;"></div> -->
+    <!-- <div onmouseover="evento1()" style="background: gray; width: 300px; height: 300px;"></div> -->
+    <!-- <div onmouseout="acao()" style="background: gray; width: 300px; height: 300px;"></div> -->
+    <div onclick="acao1()" onmouseout="acao2()" style="background: gray; width: 300px; height: 300px;"></div>
+    <script>
+
+        function acao1() {
+            alert("O elemento foi clicado")
+        }
+
+        function acao2(){
+            alert("O mouse saiu da região do elemento")
+        }
+    </script>
+</body>
+</html>

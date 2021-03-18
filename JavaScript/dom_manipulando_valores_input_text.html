@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulando valores input text</title>
+</head>
+<body>
+    <input onkeyup="distribuiCaracter()" type="text" placeholder="Digite um caracter aqui" id="entrada">
+    <hr>
+    <span>Letras</span>
+    <input type="text" disabled="disabled" id="apenas_letra">
+    
+    <span>Números</span>
+    <input type="text" disabled="disabled" id="apenas_numero">
+
+    <script>
+
+        function distribuiCaracter(){
+
+            var caracter = document.getElementById("entrada").value
+
+            document.getElementById("entrada").value = ''
+            caracter.trim()
+
+            switch (caracter) {
+                case "0":
+                case "1":
+                case "2":
+                case "3":
+                case "4":
+                case "5":
+                case "6":
+                case "7":
+                case "8":
+                case "9":
+                    document.getElementById("apenas_numero").value = caracter
+                    break;
+                default:
+                    document.getElementById("apenas_letra").value = caracter
+                   
+            }
+
+        }
+
+
+
+    </script>
+
+</body>
+</html>
