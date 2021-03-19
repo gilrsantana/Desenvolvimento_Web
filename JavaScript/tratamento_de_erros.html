@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tratamento de Erros</title>
+</head>
+<body>
+
+    <h1>Tratamento de Erros - try, catch, throw e finally</h1>
+    
+    <p>
+        Estes instrumentos são utilizados como técnica de uma programaçao reativa onde caso algum comportamento estranho ou algo que impeça o script de ser concluído aconteça, o código possua mecanismos para se recuperar desta falha e consiga entregar algo para o usuário e para equipe de desenvolvimento para tomada de futuras decisões e melhorias
+    </p>
+
+    <p>
+        Todos estes elementos são estruturas que devem estar dentro de cada bloco de código. Podem haver vários try, por exemplo, mas cada um dentro de seu próprio bloco de código.
+    </p>
+
+    <p>
+        O try é uma estrutura que faz a execução de uma instruçao e caso a resposta dali for algo inesperado pode encaminhar para um tratamento. Se o inesperado for um erro, o script vai parar e o restante do script não será  executado. Para isso pode-se fazer um catch (captura) deste erro para encaminhar para um tratamento e depois o finaly, que entregará o resultado final.
+    </p>
+
+    <p>
+        O throw é um elemento um pouco diferente. A partir dele é possível criar uma nova instância do objeto error e forçar a exibição desse objeto fazendo com que a aplicação seja interrompida. Através dele é possível apontar o local onde a exceção vai acontecer e qual mensagem ela vai apresentar.
+    </p>
+
+    <hr>
+
+    <h4>Respostas do código</h4>
+
+
+    <script>
+
+        var video = Array()
+
+        video[1] = Array()
+        video[1]['nome'] = 'Nemo'
+        video[1]['categoria'] = 'Animação'
+
+        function getVideo(video) {
+            try {
+                //logica
+                //requisições http por exemplo
+                console.log(video[0]['nome'])
+            } catch(erro) {
+                tratarErro(erro)
+                console.log('Agora sim podemos tratar esse erro (catch) - 1ª função')
+            } finally {
+                console.log('Sempre passa por aqui (try / catch) - 1ª função')
+            }
+            console.log('A aplicação não morreu - 1ª função')
+        }
+
+        function tratarErro(e) {
+            //logica para registrar o erro no servidor
+            console.log(e)
+        }
+
+        getVideo(video)
+
+        ////// Se acrescentarmos o throw ////////////////
+        /////////////////////////////////////////////////
+
+        console.log('')
+        console.log('')
+
+        var audio = Array()
+
+        audio[1] = Array()
+        audio[1]['nome'] = 'Nemo'
+        audio[1]['categoria'] = 'Animação'
+
+        function getAudio(audio) {
+            try {
+                //logica
+                //requisições http por exemplo
+                console.log(audio[0]['nome'])
+            } catch(erro) {
+                tratarErro(erro)
+                console.log('Agora sim podemos tratar esse erro (catch) - 2ª função')
+                throw new Error('Houve um erro mas não se preocupe, estamos trabalhando nisso agora (throw) - 2ª função')
+            } finally {
+                console.log('Sempre passa por aqui (try / catch) - 2ª função')
+            }
+            console.log('A aplicação não morreu - 2ª função')
+        }
+
+        function tratarErro(e) {
+            //logica para registrar o erro no servidor
+            console.log(e)
+        }
+
+        getAudio(audio)
+
+
+    </script>
+</body>
+</html>
