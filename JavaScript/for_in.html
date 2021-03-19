@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For in</title>
+</head>
+<body>
+
+  <h1>Estrutura de repetição 'for in'</h1>
+
+  <p>
+    Essa estrutura de repetição tem o mesmo comportamento que o 'for' só que com uma inteligência a mais.
+  </p>
+  <p>
+    Como um array pode assumir índices dos mais variados tipos, exemplo:
+    <ul>
+      <li>array[2] - índice inteiro positivo</li>
+      <li>array[-4] - índice inteiro negativo</li>
+      <li>array['5'] - índice string numérica</li>
+      <li>array['m'] - índice char</li>
+      <li>array['mosquito'] - indice string</li>
+      <li>array[true] - índice booleano</li>
+    </ul>
+    um laço de repetição comum 'for' não tem inteligência para tratar esses valores ele não vai operar da forma correta.
+  </p>
+  <p>
+    Já o for in tem a inteligência para percorrer o array enquanto ele não obter como resposta 'undefined'. Para isso é muito comum ele estar acompanhado do '.length', pois com esse atributo ele vai percorrer o tamanho do array não importando seus índices.
+  </p>
+
+  <p>
+    var array = Array() <br>
+    array[2] - índice inteiro positivo <br>
+    array[-4] - índice inteiro negativo <br>
+    array['5'] - índice string numérica <br>
+    array['m'] - índice char <br>
+    array['mosquito'] - indice string <br>
+    array[true] - índice booleano <br>
+  </p>
+  
+  <script>
+    var array = Array() 
+    array[2] = 'caixa de som'
+    array[-4] = 'luminária'
+    array['80'] = 'monitor'
+    array['m'] = 2355
+    array['mosquito'] = 'zebra'
+    array[true] = '233.57'
+
+    console.log(array)
+
+    for(var i in array){
+      document.write('índice: ' + i + ' - elemento - ' + array[i] + ' <br>')
+    }
+
+  </script>
+  
+  
+</body>
+</html>

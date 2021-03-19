@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Foreach</title>
+</head>
+<body>
+
+  <h1>Estrutura de repetição 'forEach'</h1>
+
+  <p>
+    Essa estrutura de repetição também percorre um array semelhante as outra estruturas for e for in, mas com algumas peculiaridades.
+    <ol>
+      <li>Ela só considera os índices do array que sejam maior ou igua a zero</li>
+      <li>Precisa de uma função de calbak que tenha, nesta ordem, as referências ao: valor, indice, array</li>
+    </ol>
+  </p>
+  <p>
+    Implantação da estrutura forEach(): <br>
+    var funcionario = Array()
+    <ul>
+      <li>funcionario[0] = 'Miguel'</li>
+      <li>funcionario[1] = 'Antonio'</li>
+      <li>funcionario[2] = 'Valber'</li>
+      <li>funcionario[3] = 'Carlos'</li>
+      <li>funcionario[4] = 'Kely'</li>
+    </ul>
+  </p>
+  <p>
+    atribuição da função auxiliar: <br>
+    var aux = function(valor, indice, array) {<br>
+      document.write('indice: ' + indice + ' | valor: ' + valor) <br>
+      if(valor == 'Miguel'){ <br>
+        array[indice] = 'Sandra' <br>
+      } <br>
+    } <br>
+  </p>
+
+  <p>
+    utilizando forEach(): <br>
+    funcionario.forEach(aux)
+  </p>
+  <p>
+    Ou seja, o <strong>'forEach()'</strong> percorre um <strong>array</strong> e faz com que para <strong> cada elemento deste array</strong> seja aplicada uma função ou comportamento
+  </p>
+  <hr>
+
+  <h4>Resultados do código</h4>
+  
+  <script>
+
+    var funcionario = ['Miguel', 'Antonio', 'Valber', 'Carlos', 'Kely']
+
+    document.write(funcionario)
+    document.write('<br><hr>')
+    
+    var aux = function(valor, indice, array) {
+      document.write('indice: ' + indice + ' | valor: ' + valor + '<br>') 
+      if(valor == 'Carlos'){ 
+        array[indice] = 'Sandra'
+      } 
+      document.write(array + '<br>')
+    } 
+
+    document.write(funcionario.forEach(aux))
+
+    document.write('<br> <hr>')
+    document.write(funcionario)
+    document.write('<br>')
+
+
+  </script>
+  
+  
+</body>
+</html>
