@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funções Variáveis</title>
+</head>
+<body>
+
+    <h1>Funções Variáveis</h1>
+    <p>Os argumentos de uma função são bem flexíveis, de forma que se no protótipo de uma função eu declarar os argumentos 'a' e 'b' e na chamada desta função eu utilizar apenas 1 parâmetro a função vai ser executada como se só houvesse 1 parâmetro e não vai quebrar. Da mesma forma, se esta mesma função for chamada mas agora com três argumentos e não dois como no seu protótipo, ele será executada, não quebrará, mas ignorará os argumentos que foram passados a amais, ou seja, dos três passados 'a', 'b' e 'c', 'a' e 'b' serão tatados pela função e 'c' ignorado</p>
+
+    <p>Há uma forma de sr mais flexível ainda é não passar nenhum parâmetro para o protótipo da função, assim, seu comportamento se dará de acordo com a quantidade de parâmetros. Este recurso é possível quando se utiliza o <strong>objeto</strong> 'arguments' para a função</p>
+
+    <p>No exemplo do código script desta página há a função soma que não tem nenhum argumento em seu protótipo, mas através do for in em arguments ela vai percorrer os argumentos passados na chamada da função soma e irá fazer a soma de seus argumentos ou a concatenação quando houver algum texto</p>
+
+    <hr>
+
+    <h4>Resultados do código</h4>
+    <br>
+
+
+    <script>
+
+        function soma() {
+            var resultado = 0
+            for(var i in arguments){
+                resultado += arguments[i]
+            }
+            return resultado
+        }
+
+        document.write('Chamando a função soma() apenas com os argumentos numéricos 2, 5, e 18' + '<br>')
+
+        document.write(soma(2,5,18))
+
+        document.write('<br>' + 'Chamando a função soma() com os argumentos numéricos 3 e 18 e o texto "laranjas"' + '<br>')
+
+        document.write(soma(3, 18, ' laranjas') + '<br>')
+
+    </script>
+    
+</body>
+</html>
